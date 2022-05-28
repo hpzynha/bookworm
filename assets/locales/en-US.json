@@ -4,6 +4,10 @@
         "email": "Email",
         "enterEmail": "Enter your email",
         "password": "Password",
-        "enterPassword": "Enter password"
+        "enterPassword": "Enter password",
+        "dontHaveAaccount":"Don’t have an account?",
+        "signUp": " Sign up",
+        "loginEnter": "LOGIN",
+        "loginGoogle": "LOGIN WITH GOOGLE"
     }
 }

@@ -55,7 +55,26 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ),
-        LineTextButton()
+        Padding(
+          padding: const EdgeInsets.only(top: 80),
+          child: Column(
+            children: [
+              PrimaryButton(
+                title: 'loginPage.loginEnter'.tr(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: GoogleButton(
+                  title: 'loginPage.loginGoogle'.tr(),
+                ),
+              ),
+              LineTextButton(
+                title: 'loginPage.dontHaveAaccount'.tr(),
+                textButton: 'loginPage.signUp'.tr(),
+              )
+            ],
+          ),
+        ),
       ]),
     );
   }
