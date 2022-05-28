@@ -28,7 +28,7 @@ class InputForm extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 15, bottom: 10, top: 20),
+              padding: const EdgeInsets.only(left: 15),
               child: Text(
                 title,
                 style: GoogleFonts.poppins(

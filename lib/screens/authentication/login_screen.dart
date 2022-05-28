@@ -1,4 +1,5 @@
 import 'package:bookworm/constants.dart';
+import 'package:bookworm/screens/authentication/signup_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -41,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 40),
+          padding: const EdgeInsets.only(top: 150),
           child: Form(
             key: _formkey,
             child: Column(
@@ -76,12 +78,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.only(top: 10),
                 child: GoogleButton(
                   title: 'loginPage.loginGoogle'.tr(),
+                  onpressed: () {},
                 ),
               ),
               LineTextButton(
                 title: 'loginPage.dontHaveAaccount'.tr(),
                 textButton: 'loginPage.signUp'.tr(),
-              )
+                onpressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignUpPage()));
+                },
+              ),
             ],
           ),
         ),

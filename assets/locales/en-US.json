@@ -9,5 +9,18 @@
         "signUp": " Sign up",
         "loginEnter": "LOGIN",
         "loginGoogle": "LOGIN WITH GOOGLE"
+    },
+    "signUp":{
+        "signUp": "Sign up",
+        "name": "Name",
+        "enterName":"Enter your name",
+        "email": "Email",
+        "enterEmail": "Enter your email",
+        "password": "Password",
+        "enterPassword": "Enter password",
+        "repeatPassword":"Repeat password",
+        "character":"*Must be at least 8 Character",
+        "createAccount":"CREATE AN ACCOUNT",
+        "signUpGoogle":"SIGN UP WITH GOOGLE"
     }
 }

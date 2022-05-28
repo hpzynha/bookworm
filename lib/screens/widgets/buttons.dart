@@ -4,7 +4,7 @@ import '../../constants.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String title;
-  final Function onpressed;
+  final VoidCallback? onpressed;
   const PrimaryButton({Key? key, required this.title, required this.onpressed})
       : super(key: key);
 
@@ -14,7 +14,7 @@ class PrimaryButton extends StatelessWidget {
       height: 60,
       width: 360,
       child: ElevatedButton(
-        onPressed: () => onpressed,
+        onPressed: onpressed,
         child: Text(
           title,
           style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w400),
@@ -28,7 +28,9 @@ class PrimaryButton extends StatelessWidget {
 
 class GoogleButton extends StatelessWidget {
   final String title;
-  const GoogleButton({Key? key, required this.title}) : super(key: key);
+  final VoidCallback? onpressed;
+  const GoogleButton({Key? key, required this.title, required this.onpressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class GoogleButton extends StatelessWidget {
       height: 60,
       width: 360,
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onpressed,
           style: ButtonStyle(
               backgroundColor:
                   MaterialStateProperty.all<Color>(bBackgroundColorWhite)),
@@ -58,10 +60,12 @@ class GoogleButton extends StatelessWidget {
 class LineTextButton extends StatelessWidget {
   final String title;
   final String textButton;
+  final VoidCallback? onpressed;
   const LineTextButton({
     Key? key,
     required this.title,
     required this.textButton,
+    required this.onpressed,
   }) : super(key: key);
 
   @override
@@ -77,7 +81,7 @@ class LineTextButton extends StatelessWidget {
               fontSize: 18),
         ),
         TextButton(
-          onPressed: () => {},
+          onPressed: onpressed,
           child: Text(
             textButton,
             style: GoogleFonts.poppins(
