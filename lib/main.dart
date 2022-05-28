@@ -1,8 +1,17 @@
 import 'package:bookworm/screens/splash_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const BookwormApp());
+  runApp(EasyLocalization(
+    supportedLocales: const [
+      Locale('en', 'US'),
+      Locale('pt', 'BR'),
+    ],
+    path: 'assets/locales',
+    child: const BookwormApp(),
+    startLocale: const Locale('en', 'US'),
+  ));
 }
 
 class BookwormApp extends StatelessWidget {
@@ -11,12 +20,11 @@ class BookwormApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bookworm',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: SplashScreen(),
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      home: const SplashScreen(),
     );
   }
 }
