@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../constants.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String title;
-  const PrimaryButton({Key? key, required this.title}) : super(key: key);
+  final Function onpressed;
+  const PrimaryButton({Key? key, required this.title, required this.onpressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class PrimaryButton extends StatelessWidget {
       height: 60,
       width: 360,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () => onpressed,
         child: Text(
           title,
           style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w400),

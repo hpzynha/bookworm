@@ -14,7 +14,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,19 +41,24 @@ class _LoginScreenState extends State<LoginScreen> {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 100),
+          padding: const EdgeInsets.only(top: 40),
           child: Form(
+            key: _formkey,
             child: Column(
               children: [
                 InputForm(
                   title: 'loginPage.email'.tr(),
                   labelText: 'loginPage.email'.tr(),
                   hintText: 'loginPage.enterEmail'.tr(),
+                  controller: emailController,
+                  obscureText: false,
                 ),
                 InputForm(
+                  obscureText: true,
                   title: 'loginPage.password'.tr(),
                   labelText: 'loginPage.password'.tr(),
                   hintText: 'loginPage.enterPassword'.tr(),
+                  controller: passwordController,
                 ),
               ],
             ),
@@ -60,6 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               PrimaryButton(
+                onpressed: () {},
                 title: 'loginPage.loginEnter'.tr(),
               ),
               Padding(

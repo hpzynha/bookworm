@@ -9,6 +9,7 @@
 .history
 .svn/
 
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -48,3 +49,4 @@ app.*.map.json
 .fvm/flutter_sdk
 
 *.env
+*.routes
